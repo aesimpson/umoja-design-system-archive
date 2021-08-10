@@ -1,13 +1,13 @@
 {
-  "name": "umoja",
-  "version": "1.1.0",
+  "name": "umoja-web-components",
+  "version": "1.2.0",
   "description": "Sama's web component design system. Following open-wc recommendations",
   "author": "Amy Simpson <asimpson@samasource.org>",
   "license": "MIT",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
+  "main": "index.js",
+  "module": "index.js",
   "type": "module",
-  "types": "./src/umoja.d.ts",
+  "types": "umoja.d.ts",
   "keywords": [],
   "scripts": {
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
