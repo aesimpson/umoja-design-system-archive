@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map.js';
 // include global styles
-import globalCSS from './global-styles.js';
+import globalCSS from '../../styles/global-styles.js';
 
 /**
  * Button.

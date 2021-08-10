@@ -1,1 +1,1 @@
-export { UmojaButton } from './src/UmojaButton.js';
+export { UmojaButton } from './src/components/button/button.js';

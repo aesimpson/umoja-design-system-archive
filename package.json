@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "module": "index.js",
+  "type": "module",
   "keywords": [],
   "scripts": {
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",

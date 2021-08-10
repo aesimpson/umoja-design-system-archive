@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import '../src/UmojaButton.js';
+import '../src/components/button/button.js';
 
 export default {
   title: 'Components/Button',
