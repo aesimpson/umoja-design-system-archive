@@ -1,72 +1,51 @@
 import { html } from 'lit-html';
-import '../src/sama-umoja.js';
+import '../src/UmojaButton.js';
 
 export default {
   title: 'Components/Button',
   argTypes: {
     label: {
-      name: "Label",
+      name: 'Label',
       control: {
-        type: 'text'
-      }
+        type: 'text',
+      },
     },
-    kind: { 
-      name: "Button Kind",
+    kind: {
+      name: 'Button Kind',
       control: {
         type: 'select',
-        options: ['Primary', 'Secondary']
-      }
-     },
-     disabled: {
-       name: "Disabled",
-       control: {
-         type: 'boolean',
-       }
-     },
-     href: {
-      name: "Link (href)",
-      control: {
-        type: 'text'
-      }
-     },
-     icon:{
-      name:"Icon",
+        options: ['primary', 'secondary'],
+      },
+    },
+    disabled: {
+      name: 'Disabled',
       control: {
         type: 'boolean',
-      }
-    }
+      },
+    },
+    href: {
+      name: 'Link (href)',
+      control: {
+        type: 'text',
+      },
+    },
   },
 };
 
-const Template = ({ kind, label, disabled, href, icon }) =>
-html`
-  <umoja-btn 
-    .label=${label} 
-    .kind=${kind} 
-    .disabled=${disabled} 
-    .href=${href}
-    .icon=${icon}
-  ></umoja-btn>
-`;
+const Template = ({ kind, label, disabled, href }) =>
+  html`
+    <umoja-btn
+      .label=${label}
+      .kind=${kind}
+      .disabled=${disabled}
+      .href=${href}
+    ></umoja-btn>
+  `;
 
 export const Default = Template.bind({});
-  
+
 Default.args = {
-  label: "Button",
-  kind: "Primary",
-  disabled: false
-};
-
-export const Icon = Template.bind({});
-
-Icon.args = {
-  kind: "Primary",
+  label: 'Button',
+  kind: 'primary',
   disabled: false,
-  icon: true
-};
-
-Icon.parameters = {
-  controls: { 
-    exclude: /^label*/ 
-  }, 
 };

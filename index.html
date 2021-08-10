@@ -5,14 +5,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="Description" content="Put your description here.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin: 0;
+      background-color: #22222A;
+      font-size: 16px;
+    }
+    .container{
+      width: 1200px;
+      margin: 6rem auto;
+    }
+    section{
+      margin: 3rem 0;
+    }
+  </style>
   <base href="/">
   <title>sama-umoja</title>
 </head>
 
 <body>
-  <umoja-btn></umoja-btn>
-
-  <script type="module" src="./src/sama-umoja.js"></script>
+  <main class="container">
+    <section>
+      <umoja-btn></umoja-btn>
+      <umoja-btn disabled="true"></umoja-btn>
+    </section>
+    <section>
+      <umoja-btn
+        kind="secondary"
+      >
+      </umoja-btn>
+      <umoja-btn 
+        kind="secondary"
+        disabled="true"
+      >
+      </umoja-btn>
+    </section>
+  </main>
+  <script type="module" src="./src/UmojaButton.js"></script>
 </body>
 
 </html>

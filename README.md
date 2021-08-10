@@ -1,18 +1,26 @@
-<p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
-</p>
+## Use an Umoja component
 
-## Open-wc Starter App
+This is a general guide to using umoja components. Refer to a component’s README or other documentation for specific details.
 
-[![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
+To use a umoja component in your code:
 
-## Quickstart
+1. From your project folder, install the component from npm.
+```bash
+npm install umoja
+# requires node 10 & npm 6 or higher
+```
+2. Import the component.
 
-To get started:
+In a JavaScript module:
 
 ```bash
-npm init @open-wc
-# requires node 10 & npm 6 or higher
+import 'some-package-name';
+```
+
+3. Add the component to your application or component:
+
+```bash
+<umoja-component></umoja-component>
 ```
 
 ## Scripts
