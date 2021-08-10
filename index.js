@@ -1,5 +1,1 @@
-const UmojaButton = require('./src/UmojaButton.js');
-
-module.exports = {
-  UmojaButton,
-};
+export { UmojaButton } from './src/UmojaButton.js';
