@@ -28,8 +28,8 @@ export default css`
     cursor: pointer;
     transition: all 0.15s linear;
   }
-  .umoja_btn:active,
-  .umoja_btn:focus {
+  .umoja_btn:active:enabled,
+  .umoja_btn:focus:enabled {
     border: 1px solid var(--color-purple);
     box-shadow: 0px 0px 0px 3px rgba(73, 55, 120, 0.4);
   }

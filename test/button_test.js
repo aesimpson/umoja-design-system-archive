@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import UmojaButtom from '../src/components/button/button.js';
+import { UmojaButton } from '../src/index.js';
 import {fixture, html} from '@open-wc/testing';
 
 const assert = chai.assert;
@@ -12,7 +12,7 @@ const assert = chai.assert;
 suite('umoja-btn', () => {
   test('is defined', () => {
     const el = document.createElement('umoja-btn');
-    assert.instanceOf(el, UmojaButtom);
+    assert.instanceOf(el, UmojaButton);
   });
 
   test('renders with default values', async () => {

@@ -1,17 +1,12 @@
 {
-  "name": "umoja-web-components",
+  "name": "umoja-design-system",
   "version": "0.0.1",
   "description": "Sama's web component design system. Following open-wc recommendations",
   "author": "Amy Simpson <asimpson@samasource.org>",
   "license": "MIT",
   "main": "./src/index.js",
   "module": "./src/index.js",
-  "keywords": [
-    "web-components",
-    "lit-element",
-    "javascript",
-    "lit"
-  ],
+  "keywords": [],
   "scripts": {
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.js'",

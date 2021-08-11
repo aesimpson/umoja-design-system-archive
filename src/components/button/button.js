@@ -1,5 +1,6 @@
 import {LitElement, html} from 'lit';
 import {classMap} from 'lit/directives/class-map.js';
+import { ifDefined } from 'lit/directives/if-defined';
 import styles from './button.styles.js';
 
 /**
@@ -18,6 +19,9 @@ export default class UmojaButton extends LitElement {
       title: {type: String, reflect: true},
       disabled: {type: Boolean, reflect: true},
       href: {type: String, reflect: true},
+      target: {type: String, reflect: true},
+      submit: {type: Boolean, reflect: true},
+      download: {type: String}
     };
   }
 
@@ -32,44 +36,48 @@ export default class UmojaButton extends LitElement {
     super.connectedCallback();
   }
 
+  handleClick(e) {
+    if (this.disabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
   render() {
-    const {title, kind, disabled, href} = this;
+    const {title, kind, disabled, href, target, submit, download, handleClick} = this;
 
     if (href) {
-      return disabled
-        ? html` <p 
-                  class=${classMap({
-                    umoja_btn: true,
-                    [`umoja_btn-${kind}`]: kind,
-                    [`umoja_btn-disabled`]: disabled
-                  })}
-                >
-                  ${title}
-                </p> `
-        : html`
-            <a
-              class=${classMap({
-                umoja_btn: true,
-                [`umoja_btn-${kind}`]: kind,
-                [`umoja_btn-disabled`]: disabled
-              })}
-              role="button"
-              href="${href}"
-              ?disabled="${disabled}"
-            >
-              ${title}
-            </a>
-          `;
+      return html`
+        <a
+          class=${classMap({
+            umoja_btn: true,
+            [`umoja_btn-${kind}`]: kind,
+            [`umoja_btn-disabled`]: disabled
+          })}
+          href=${ifDefined(href)}
+          target=${ifDefined(target)}
+          download=${ifDefined(download)}
+          rel=${ifDefined(target ? 'noreferrer noopener' : undefined)}
+          role="button"
+          aria-disabled=${disabled ? 'true' : 'false'}
+          tabindex=${disabled ? '-1' : '0'}
+          @click=${handleClick}
+        >
+          ${title}
+        </a>
+      `;
     }
     return html`
       <button 
-        type="button" 
+        type=${submit ? 'submit' : 'button'}
         class=${classMap({
           umoja_btn: true,
           [`umoja_btn-${kind}`]: kind,
           [`umoja_btn-disabled`]: disabled
         })}
-        ?disabled="${disabled}">
+        ?disabled="${disabled}"
+        @click=${handleClick}
+      >
         ${title}
       </button>
     `;

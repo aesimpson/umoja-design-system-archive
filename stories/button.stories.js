@@ -29,16 +29,38 @@ export default {
         type: 'text',
       },
     },
+    target: {
+      name: 'Link target',
+      control: {
+        type: 'select',
+        options: ['_blank', '_parent', '_self', '_top'],
+      },
+    },
+    download: {
+      name: 'Download',
+      control: {
+        type: 'text',
+      },
+    },
+    submit: {
+      name: 'Submit',
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 };
 
-const Template = ({ kind, title, disabled, href }) =>
+const Template = ({ kind, title, disabled, href, target, download, submit }) =>
   html`
     <umoja-btn
       .title=${title} 
       .kind=${kind} 
       .disabled=${disabled} 
       .href=${href}
+      .target=${target}
+      .download=${download}
+      .submit=${submit}
     >
     </umoja-btn>
   `;
