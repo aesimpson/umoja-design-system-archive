@@ -2,20 +2,20 @@
   "version": 2,
   "tags": [
     {
-      "name": "sama-umoja",
-      "description": "An application with a title and an action counter",
+      "name": "umoja-btn",
+      "description": "A button component",
       "properties": [
         {
           "name": "title",
           "type": "String",
-          "description": "The title of your application",
-          "default": "Hey there"
+          "description": "The title of button",
+          "default": "Button"
         },
         {
-          "name": "page",
+          "name": "kind",
           "type": "String",
-          "description": "Which page to show",
-          "default": "main"
+          "description": "The kind of button. This determines the button's styling.",
+          "default": "primary"
         }
       ],
       "events": [],

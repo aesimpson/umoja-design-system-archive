@@ -1,11 +1,11 @@
-import { html } from 'lit-html';
+import {html} from 'lit-html';
 import '../src/components/button/button.js';
 
 export default {
   title: 'Components/Button',
   argTypes: {
-    label: {
-      name: 'Label',
+    title: {
+      name: 'Title',
       control: {
         type: 'text',
       },
@@ -32,20 +32,21 @@ export default {
   },
 };
 
-const Template = ({ kind, label, disabled, href }) =>
+const Template = ({ kind, title, disabled, href }) =>
   html`
     <umoja-btn
-      .label=${label}
-      .kind=${kind}
-      .disabled=${disabled}
+      .title=${title} 
+      .kind=${kind} 
+      .disabled=${disabled} 
       .href=${href}
-    ></umoja-btn>
+    >
+    </umoja-btn>
   `;
 
 export const Default = Template.bind({});
 
 Default.args = {
-  label: 'Button',
+  title: 'Button',
   kind: 'primary',
   disabled: false,
 };

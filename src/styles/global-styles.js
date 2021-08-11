@@ -1,7 +1,9 @@
-import { css } from 'lit-element';
+import {css} from 'lit';
 
 export default css`
   :host {
+    position: relative;
+    box-sizing: border-box;
     --color-charcoal0: #0d0d11;
     --color-charcoal1: #17171c;
     --color-charcoal2: #22222a;
@@ -12,11 +14,13 @@ export default css`
     --color-charcoal7: #dcdce9;
     --color-purple: #7761b0;
   }
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+
+  :host *,
+  :host *::before,
+  :host *::after {
+    box-sizing: inherit;
   }
+
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;

@@ -5,10 +5,12 @@ This is a general guide to using umoja components. Refer to a component’s READ
 To use a umoja component in your code:
 
 1. From your project folder, install the component from npm.
+
 ```bash
 npm install umoja
 # requires node 10 & npm 6 or higher
 ```
+
 2. Import the component.
 
 In a JavaScript module:
