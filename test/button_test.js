@@ -16,11 +16,11 @@ suite('umoja-btn', () => {
   });
 
   test('renders with default values', async () => {
-    const el = await fixture(html`<umoja-btn></umoja-btn>`);
+    const el = await fixture(html`<umoja-btn title="Button"></umoja-btn>`);
     assert.shadowDom.equal(
       el,
       `
-      <button type="button" class="umoja_btn umoja_btn-primary">Button</button>
+      <button type="button" class="umoja-c-btn umoja-c-btn--primary">Button</button>
     `
     );
   });
@@ -29,24 +29,24 @@ suite('umoja-btn', () => {
     const el = await fixture(html`<umoja-btn title="Umoja"></umoja-btn>`);
     assert.shadowDom.equal(
       el,
-      `<button type="button" class="umoja_btn umoja_btn-primary">Umoja</button>`
+      `<button type="button" class="umoja-c-btn umoja-c-btn--primary">Umoja</button>`
     );
   });
 
   test('handles a click', async () => {
-    const el = await fixture(html`<umoja-btn></umoja-btn>`);
+    const el = await fixture(html`<umoja-btn title="Button"></umoja-btn>`);
     const button = el.shadowRoot.querySelector('button');
     button.click();
     await el.updateComplete;
     assert.shadowDom.equal(
       el,
-      `<button type="button" class="umoja_btn umoja_btn-primary">Button</button>`
+      `<button type="button" class="umoja-c-btn umoja-c-btn--primary">Button</button>`
     );
   });
 
   test('styling applied', async () => {
-    const el = await fixture(html`<umoja-btn></umoja-btn>`);
+    const el = await fixture(html`<umoja-btn title="Button"></umoja-btn>`);
     await el.updateComplete;
-    assert.equal(getComputedStyle(el).height, '30px');
+    assert.equal(getComputedStyle(el).height, 'auto');
   });
 });

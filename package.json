@@ -4,8 +4,6 @@
   "description": "Sama's web component design system. Following open-wc recommendations",
   "author": "Amy Simpson <asimpson@samasource.org>",
   "license": "MIT",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
   "keywords": [],
   "scripts": {
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
@@ -17,7 +15,7 @@
     "test": "wtr",
     "test:watch": "npm run test -- --watch",
     "storybook": "web-dev-server -c .storybook/server.mjs",
-    "storybook:build": "build-storybook",
+    "storybook:build": "build-storybook -o ./public",
     "build": "rimraf dist && rollup -c rollup.config.js",
     "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
     "start": "web-dev-server"

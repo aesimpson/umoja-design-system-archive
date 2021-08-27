@@ -6,22 +6,23 @@ const canvasStyles =
     font-size: 100%;
     position: relative;
     box-sizing: border-box;
-    --color-charcoal0: #0d0d11;
-    --color-charcoal1: #17171c;
-    --color-charcoal2: #22222a;
-    --color-charcoal3: #30303b;
-    --color-charcoal4: #40404f;
-    --color-charcoal5: #b3b3b9;
-    --color-charcoal6: #b4b4c1;
-    --color-charcoal7: #dcdce9;
+    --color-charcoal0: #0e0e11;
+    --color-charcoal1: #1E1E24;
+    --color-charcoal2: #2E2E38;
+    --color-charcoal3: #40404f;
+    --color-charcoal4: #606076;
+    --color-charcoal5: #9D9DB5;
+    --color-charcoal6: #cdcde1;
+    --color-charcoal7: #e2e2ee;
     --color-purple: #7761b0;
     --font-manrope: "Manrope", sans-serif;
   }
 
   body{
-    background-color:  var(--color-charcoal1);
+    background-color:  var(--color-charcoal2);
     font-size: 1rem;
     font-weight: 400;
+    font-family: var(--font-manrope);
     line-height: 1.5;
   }
 
@@ -35,13 +36,14 @@ const canvasStyles =
 export const parameters = {
   backgrounds: {
     values: [
-      {name: 'charcoal0', value: '#0D0D11'},
-      {name: 'charcoal1', value: '#17171C'},
-      {name: 'charcoal2', value: '#22222A'},
-      {name: 'charcoal3', value: '#30303B'},
-      {name: 'charcoal4', value: '#40404F'},
-      {name: 'charcoal5', value: '#B3B3B9'},
-      {name: 'sunshine', value: '#FFFA0C'},
+      {name: 'charcoal0', value: '#0e0e11'},
+      {name: 'charcoal1', value: '#1E1E24'},
+      {name: 'charcoal2', value: '#2E2E38'},
+      {name: 'charcoal3', value: '#40404f'},
+      {name: 'charcoal4', value: '#606076'},
+      {name: 'charcoal5', value: '#9D9DB5'},
+      {name: 'charcoal6', value: '#cdcde1'},
+      {name: 'charcoal7', value: '#e2e2ee'},
       {name: 'white', value: '#FFFFFF'},
     ],
   },

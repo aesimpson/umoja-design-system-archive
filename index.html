@@ -13,11 +13,13 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
       body {
         margin: 0;
         background-color: #22222a;
         font-size: 16px;
+        font-family: 'Manrope', sans-serif;
       }
       .container {
         width: 1200px;
@@ -34,16 +36,44 @@
   <body>
     <main class="container">
       <section>
-        <umoja-btn></umoja-btn>
-        <umoja-btn disabled="true"></umoja-btn>
+        <umoja-btn icon="face"></umoja-btn>
+        <umoja-btn disabled title="Button"></umoja-btn>
       </section>
       <section>
-        <umoja-btn kind="secondary"></umoja-btn>
-        <umoja-btn kind="secondary" disabled="true"></umoja-btn>
+        <umoja-btn icon="face" title="Button" kind="secondary" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank"></umoja-btn>
+        <umoja-btn kind="secondary" disabled="true" title="Button"></umoja-btn>
       </section>
+      <form>
+        <input type="text" name="test" />
+        <umoja-btn submit=true title="Submit"></umoja-btn>
+      </form>
+      <section>
+        <umoja-radio-btn-group name="group_1" orientation="vertical" theme="light">
+          <umoja-radio-btn label="Radio Group1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
+          <umoja-radio-btn label="Radio Group2" value="no"></umoja-radio-btn>
+        </umoja-radio-btn-group>
+      </section>
+      <section>
+          <umoja-radio-btn-group name="group_1" orientation="vertical">
+            <umoja-radio-btn label="Radio Group1" name="radio_group" value="yes" img="radio-bkgr.png" theme="light" disabled></umoja-radio-btn>
+            <umoja-radio-btn label="Radio Group2" name="radio_group" value="no" theme="light" disabled></umoja-radio-btn>
+          </umoja-radio-btn-group>
+        </section>
+        <section>
+          <umoja-radio-btn-group name="group_1" orientation="vertical">
+            <umoja-radio-btn label="Radio Group1" name="radio_group" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
+            <umoja-radio-btn label="Radio Group2" name="radio_group" value="no"></umoja-radio-btn>
+          </umoja-radio-btn-group>
+        </section>
+        <section>
+          <umoja-radio-btn-group name="group_1" orientation="vertical">
+            <umoja-radio-btn label="Radio Group1" name="radio_group" value="yes" img="radio-bkgr.png" disabled></umoja-radio-btn>
+            <umoja-radio-btn label="Radio Group2" name="radio_group" value="no" disabled></umoja-radio-btn>
+          </umoja-radio-btn-group>
+        </section>
     </main>
     <script type="module">
-      import {UmojaButton} from  './src/index.js';
+      import './src/index.js';
     </script>
   </body>
 </html>

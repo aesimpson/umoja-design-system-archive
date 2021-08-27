@@ -2,11 +2,10 @@
   "name": "umoja-web-components",
   "version": "0.1.0",
   "description": "Sama's web component design system. Following open-wc recommendations",
-  "author": "Amy Simpson <asimpson@samasource.org>",
+  "author": "Amy Simpson <asimpson@sama.com>",
   "license": "MIT",
   "main": "index.js",
   "module": "index.js",
-  "type": "module",
   "keywords": [
     "web-components",
     "lit-element",

@@ -1,3 +1,22 @@
+## Building an Umoja component
+
+# CSS Architecture and class names
+
+The Umoja Design System uses a strict class naming convention. Keeping to this convention creates a modular system with better clarity, improved legibility, and avoids conflicts. This is all accomplished by combining 4 techniques:
+
+1. a global namespace
+2. class prefixes
+3. pascal casing
+4. BEM syntax
+
+The prefixes available are:
+
+b- (Base) for classes that add additional styling to base HTML elements
+c- (Component) for UI components, such as .umoja-c-btn
+l- (Layout) for layout-related styles, such as .umoja-l-grid__item or .umoja-l-input-group__item
+
+Based off of: [CSS Architecture for Design Systems](https://bradfrost.com/blog/post/css-architecture-for-design-systems/)
+
 ## Use an Umoja component
 
 This is a general guide to using umoja components. Refer to a component’s README or other documentation for specific details.

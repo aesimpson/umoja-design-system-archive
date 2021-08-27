@@ -1,18 +1,24 @@
 import {css} from 'lit';
+import layoutCSS from './layout-styles.js';
 
 export default css`
   :host {
     position: relative;
     box-sizing: border-box;
-    --color-charcoal0: #0d0d11;
-    --color-charcoal1: #17171c;
-    --color-charcoal2: #22222a;
-    --color-charcoal3: #30303b;
-    --color-charcoal4: #40404f;
-    --color-charcoal5: #b3b3b9;
-    --color-charcoal6: #b4b4c1;
-    --color-charcoal7: #dcdce9;
-    --color-purple: #7761b0;
+    --color-charcoal0: #0e0e11;
+    --color-charcoal1: #1E1E24;
+    --color-charcoal2: #2E2E38;
+    --color-charcoal3: #40404f;
+    --color-charcoal4: #606076;
+    --color-charcoal5: #9D9DB5;
+    --color-charcoal6: #cdcde1;
+    --color-charcoal7: #e2e2ee;
+    --color-purple0: #370c7c;
+    --color-purple1: #5f2eae;
+    --color-purple2: #885ad3;
+    --color-purple3: #a378e9;
+    --color-purple4: #c9aef5;
+    --color-purple5: #e9dcfd;
   }
 
   :host *,
@@ -89,4 +95,15 @@ export default css`
   [hidden] {
     display: none;
   }
+  .umoja-b-label{
+    font-size: 0.875rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.43;
+    color: var(--color-charcoal6);
+  }
+  .umoja-u-hidden{
+    display: none;
+  }
+  ${layoutCSS}
 `;

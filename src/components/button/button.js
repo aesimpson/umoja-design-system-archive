@@ -1,6 +1,6 @@
 import {LitElement, html} from 'lit';
 import {classMap} from 'lit/directives/class-map.js';
-import { ifDefined } from 'lit/directives/if-defined';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import styles from './button.styles.js';
 
 /**
@@ -21,15 +21,21 @@ export default class UmojaButton extends LitElement {
       href: {type: String, reflect: true},
       target: {type: String, reflect: true},
       submit: {type: Boolean, reflect: true},
-      download: {type: String}
+      download: {type: String},
+      icon: {type: String, reflect: true}
     };
   }
 
   constructor() {
     super();
-    this.title = 'Button';
     this.kind = 'primary';
     this.disabled = false;
+    this.submit = this.getAttribute('submit');
+    if(this.submit){
+      //TODO: future switch over to HTMLELement.attachInternals() method. Method only compatibile in Chrome as of 8/21
+      const formAssociation = `<button class="umoja-u-form-association" type="submit"></button>`;
+      this.insertAdjacentHTML('afterbegin', formAssociation);
+    }
   }
 
   connectedCallback() {
@@ -41,47 +47,57 @@ export default class UmojaButton extends LitElement {
       e.preventDefault();
       e.stopPropagation();
     }
+    if(this.submit){
+      this.querySelector('.umoja-u-form-association').click();
+      this.querySelector('.umoja-u-form-association').remove();
+    }
   }
 
   render() {
-    const {title, kind, disabled, href, target, submit, download, handleClick} = this;
+    const {title, kind, disabled, href, target, submit, download, icon, handleClick} = this;
+    let iconLayout = icon;
+    iconLayout = (title ? false : true);
+    console.log(iconLayout)
 
-    if (href) {
-      return html`
+    return href
+      ? html`
         <a
           class=${classMap({
-            umoja_btn: true,
-            [`umoja_btn-${kind}`]: kind,
-            [`umoja_btn-disabled`]: disabled
+            [`umoja-c-btn`]: true,
+            [`umoja-c-btn--${kind}`]: kind,
+            [`umoja-c-btn--disabled`]: disabled,
+            [`umoja-c-btn--icon`]: iconLayout
           })}
           href=${ifDefined(href)}
           target=${ifDefined(target)}
-          download=${ifDefined(download)}
+          ?download=${ifDefined(download)}
           rel=${ifDefined(target ? 'noreferrer noopener' : undefined)}
           role="button"
           aria-disabled=${disabled ? 'true' : 'false'}
           tabindex=${disabled ? '-1' : '0'}
           @click=${handleClick}
         >
-          ${title}
+          ${icon ? html `<span class="material-icons">${icon}</span>`: ''}
+          ${ifDefined(title)}        
         </a>
-      `;
-    }
-    return html`
-      <button 
-        type=${submit ? 'submit' : 'button'}
-        class=${classMap({
-          umoja_btn: true,
-          [`umoja_btn-${kind}`]: kind,
-          [`umoja_btn-disabled`]: disabled
-        })}
-        ?disabled="${disabled}"
-        @click=${handleClick}
-      >
-        ${title}
-      </button>
+      `
+      : html`
+        <button 
+          type=${submit ? 'submit' : 'button'}
+          class=${classMap({
+            [`umoja-c-btn`]: true,
+            [`umoja-c-btn--${kind}`]: kind,
+            [`umoja-c-btn--disabled`]: disabled,
+            [`umoja-c-btn--icon`]: iconLayout
+          })}
+          ?disabled="${disabled}"
+          @click=${handleClick}
+        >
+          ${icon ? html `<span class="material-icons">${icon}</span>`: ''}
+          ${ifDefined(title)}
+        </button>
     `;
   }
 }
 
-window.customElements.define('umoja-btn', UmojaButton);
+customElements.define('umoja-btn', UmojaButton);
