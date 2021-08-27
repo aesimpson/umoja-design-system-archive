@@ -1,4 +1,5 @@
 import {html} from 'lit-html';
+import samaTheme from './sama-theme.js';
 
 const canvasStyles =
   `
@@ -47,6 +48,9 @@ export const parameters = {
       {name: 'white', value: '#FFFFFF'},
     ],
   },
+  docs: {
+    theme: samaTheme,
+  }
 };
 
 export const decorators = [
