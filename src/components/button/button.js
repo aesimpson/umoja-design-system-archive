@@ -57,7 +57,6 @@ export default class UmojaButton extends LitElement {
     const {title, kind, disabled, href, target, submit, download, icon, handleClick} = this;
     let iconLayout = icon;
     iconLayout = (title ? false : true);
-    console.log(iconLayout)
 
     return href
       ? html`
