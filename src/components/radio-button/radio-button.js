@@ -29,8 +29,6 @@ export default class UmojaRadioButton extends LitElement {
     super();
     this.disabled = false;
     this.checked = false;
-    //TODO: future switch over to HTMLELement.attachInternals() method. Method only compatibile in Chrome as of 8/21
-    //this.insertAdjacentHTML('afterbegin', `<input class="umoja-u-form-association" type="hidden" name="${this.name}" value="${this.value}" tabIndex="-1" disabled />`)
   }
 
   connectedCallback() {
@@ -48,7 +46,6 @@ export default class UmojaRadioButton extends LitElement {
     target.tabIndex = this.checked ? 0 : -1;
 
     if(target.checked && !this.checked){
-      //const formAssociation = this.querySelector('.umoja-u-form-association');
       let event = new CustomEvent('umoja-radio-btn-checked', {
         bubbles: true,
         composed: true,
@@ -57,10 +54,6 @@ export default class UmojaRadioButton extends LitElement {
         },
       })
       this.dispatchEvent(event);
-
-      //if(formAssociation){
-        //formAssociation.disabled = false;
-      //}
     }
   }
 

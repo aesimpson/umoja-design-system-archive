@@ -13,10 +13,15 @@ npm install umoja-web-components
 
 2. Import the component.
 
-In a JavaScript module:
-
+All components:
 ```bash
-import {SomeComponent} from 'umoja-web-components';
+import 'umoja-web-components';
+```
+
+You can import a single component with it's file path:
+Example:
+```bash
+import 'umoja-web-components/components/button/button].js';
 ```
 
 3. Add the component to your application or component:

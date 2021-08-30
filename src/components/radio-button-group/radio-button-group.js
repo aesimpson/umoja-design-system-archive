@@ -26,6 +26,8 @@ export default class UmojaRadioButtonGroup extends LitElement {
         super();
         this.name = this.getAttribute('name');
         this.value = "";
+        this.radios = [];
+        this.initialized = false;
 
         this.addEventListener('umoja-radio-btn-checked', this.handleRadioButtonChange.bind(this));
         this.addEventListener('umoja-radio-btn-keyevent', this.handleRadioButtonKeyEvent.bind(this));
@@ -34,20 +36,24 @@ export default class UmojaRadioButtonGroup extends LitElement {
     connectedCallback() {
         super.connectedCallback();
 
-        this.radios = Array.from(this.querySelectorAll('umoja-radio-btn'));
-
         //TODO: future switch over to HTMLELement.attachInternals() method. Method only compatibile in Chrome as of 8/21
         this.insertAdjacentHTML('beforeend', `<input class="umoja-u-form-association" type="hidden" name="${this.name}" value="${this.value}"/>`);
     }
 
-    updated(){
-        this.radios.map((radio) => {
-            radio.setAttribute('name', this.name);
-            
-            if(this.theme){
-                radio.setAttribute('theme', this.theme)
-            }
-        })
+    shouldUpdate(changedProperties){
+        if(!this.initialized) {
+            this.radios = Array.from(this.children);
+            this.radios.map((radio) => {
+                console.log(radio)
+                radio.setAttribute('name', this.name);
+                
+                if(this.theme && radio.localName === 'umoja-radio-btn'){
+                    radio.setAttribute('theme', this.theme)
+                }
+            });
+            this.initialized = true;
+        }
+        return changedProperties;
     }
 
     handleRadioButtonChange = (e) => {
