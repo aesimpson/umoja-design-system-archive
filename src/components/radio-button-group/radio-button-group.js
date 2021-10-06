@@ -42,27 +42,24 @@ export default class UmojaRadioButtonGroup extends LitElement {
 
     shouldUpdate(changedProperties){
         if(!this.initialized) {
-            this.radios = Array.from(this.children);
+            this.radios = Array.from(this.getElementsByTagName('umoja-radio-btn'));
+
             this.radios.map((radio) => {
-                console.log(radio)
                 radio.setAttribute('name', this.name);
-                
-                if(this.theme && radio.localName === 'umoja-radio-btn'){
-                    radio.setAttribute('theme', this.theme)
-                }
+                radio.setAttribute('theme', this.theme)
             });
             this.initialized = true;
         }
         return changedProperties;
     }
 
-    handleRadioButtonChange = (e) => {
+    handleRadioButtonChange(e){
         const newRadio = e.detail.radio;
         const oldRadio = this.radios.find(radio => radio.checked);
         this.manageRadios(oldRadio, newRadio);
     }
 
-    handleRadioButtonKeyEvent = (e) => {
+    handleRadioButtonKeyEvent(e){
         let direction;
         const oldRadio = this.radios.find(radio => radio.checked);
         const oldRadioIndex = this.radios.findIndex(radio => radio.checked);

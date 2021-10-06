@@ -43,34 +43,34 @@
         <umoja-btn icon="face" title="Button" kind="secondary" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank"></umoja-btn>
         <umoja-btn kind="secondary" disabled="true" title="Button"></umoja-btn>
       </section>
-      <form>
-        <input type="text" name="test" />
-        <umoja-btn submit=true title="Submit"></umoja-btn>
-      </form>
+      <section>
+        <section>
+          <umoja-radio-btn-group name="group_2">
+            <umoja-radio-btn label="Radio 1" name="radio_group" value="value1"></umoja-radio-btn>
+            <umoja-radio-btn label="Radio 2" name="radio_group" value="value2"></umoja-radio-btn>
+            <umoja-radio-btn label="Radio 3" name="radio_group" value="value3"></umoja-radio-btn>
+          </umoja-radio-btn-group>
+      </section>
       <section>
         <umoja-radio-btn-group name="group_1" theme="light">
-          <umoja-radio-btn label="Radio Group1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
-          <umoja-radio-btn label="Radio Group2" value="no"></umoja-radio-btn>
+          <umoja-radio-btn label="Radio 1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
+          <umoja-radio-btn label="Radio 2" value="no" img="radio-bkgr.png"></umoja-radio-btn>
+          <umoja-radio-btn label="Radio 3" value="maybe" img="radio-bkgr.png"></umoja-radio-btn>
         </umoja-radio-btn-group>
       </section>
       <section>
-          <umoja-radio-btn-group name="group_1" orientation="vertical">
-            <umoja-radio-btn label="Radio Group1" name="radio_group" value="yes" img="radio-bkgr.png" theme="light" disabled></umoja-radio-btn>
-            <umoja-radio-btn label="Radio Group2" name="radio_group" value="no" theme="light" disabled></umoja-radio-btn>
-          </umoja-radio-btn-group>
-        </section>
-        <section>
-          <umoja-radio-btn-group name="group_1" orientation="vertical">
-            <umoja-radio-btn label="Radio Group1" name="radio_group" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
-            <umoja-radio-btn label="Radio Group2" name="radio_group" value="no"></umoja-radio-btn>
-          </umoja-radio-btn-group>
-        </section>
-        <section>
-          <umoja-radio-btn-group name="group_1" orientation="vertical">
-            <umoja-radio-btn label="Radio Group1" name="radio_group" value="yes" img="radio-bkgr.png" disabled></umoja-radio-btn>
-            <umoja-radio-btn label="Radio Group2" name="radio_group" value="no" disabled></umoja-radio-btn>
-          </umoja-radio-btn-group>
-        </section>
+        <umoja-radio-btn-group name="group_3" theme="light">
+          <div>
+            <umoja-radio-btn label="Radio 1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
+          </div>
+          <div>
+            <umoja-radio-btn label="Radio 2" value="no" img="radio-bkgr.png"></umoja-radio-btn>
+          </div>
+          <div>
+            <umoja-radio-btn label="Radio 3" value="maybe" img="radio-bkgr.png"></umoja-radio-btn>
+          </div>
+        </umoja-radio-btn-group>
+      </section>
     </main>
     <script type="module">
       import './src/index.js';
