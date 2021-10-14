@@ -35,6 +35,7 @@
 
   <body>
     <main class="container">
+      <form>
       <section>
         <umoja-btn icon="face"></umoja-btn>
         <umoja-btn disabled title="Button"></umoja-btn>
@@ -45,21 +46,21 @@
       </section>
       <section>
         <section>
-          <umoja-radio-btn-group name="group_2">
+          <umoja-radio-btn-group name="group_2" umoja-radio-btn-group-change="">
             <umoja-radio-btn label="Radio 1" name="radio_group" value="value1"></umoja-radio-btn>
             <umoja-radio-btn label="Radio 2" name="radio_group" value="value2"></umoja-radio-btn>
             <umoja-radio-btn label="Radio 3" name="radio_group" value="value3"></umoja-radio-btn>
           </umoja-radio-btn-group>
       </section>
       <section>
-        <umoja-radio-btn-group name="group_1" theme="light">
+        <umoja-radio-btn-group name="group_1" theme="light" value="yes">
           <umoja-radio-btn label="Radio 1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
           <umoja-radio-btn label="Radio 2" value="no" img="radio-bkgr.png"></umoja-radio-btn>
           <umoja-radio-btn label="Radio 3" value="maybe" img="radio-bkgr.png"></umoja-radio-btn>
         </umoja-radio-btn-group>
       </section>
       <section>
-        <umoja-radio-btn-group name="group_3" theme="light">
+        <umoja-radio-btn-group name="group_3" theme="light" value="no">
           <div>
             <umoja-radio-btn label="Radio 1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
           </div>
@@ -71,9 +72,13 @@
           </div>
         </umoja-radio-btn-group>
       </section>
+      <input type="text" />
+      <input type="submit" />
+    </form>
     </main>
     <script type="module">
       import './src/index.js';
+      document.querySelector('input[name="group_2"]').setAttribute('value', 'value3');
     </script>
   </body>
 </html>

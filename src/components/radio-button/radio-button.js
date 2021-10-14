@@ -29,6 +29,7 @@ export default class UmojaRadioButton extends LitElement {
     super();
     this.disabled = false;
     this.checked = false;
+    this.addEventListener('click', this.handleClick);
   }
 
   connectedCallback() {
@@ -45,7 +46,7 @@ export default class UmojaRadioButton extends LitElement {
 
     target.tabIndex = this.checked ? 0 : -1;
 
-    if(target.checked && !this.checked){
+    if(!this.checked){
       let event = new CustomEvent('umoja-radio-btn-checked', {
         bubbles: true,
         composed: true,
